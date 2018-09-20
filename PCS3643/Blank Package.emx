@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<!--Rational Software Architect Designer 9.6-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.uml.msl.model" version="7.0.0"><feature description="" name="com.ibm.xtools.ruml.feature" url="" version="7.0.0"/></signature>?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Default="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.3/Umlnotation" xsi:schemaLocation="http:///schemas/Default/_fNm3AAqoEd6-N_NOT9vsCA/2 pathmap://UML2_MSL_PROFILES/Default.epx#_fNwoAAqoEd6-N_NOT9vsCA?Default/Default?">
+  <uml:Package xmi:id="_oZeJwLeAEeiznvkN3YybYg" name="Blank Package">
+    <eAnnotations xmi:id="_oZeJwbeAEeiznvkN3YybYg" source="uml2.diagrams" references="_oZeJwreAEeiznvkN3YybYg">
+      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_oZeJwreAEeiznvkN3YybYg" type="Freeform" name="Main">
+        <children xmi:type="notation:Shape" xmi:id="_90i1ILeJEeiznvkN3YybYg" type="rectangle" fontName="Segoe UI" fontHeight="8" transparency="100" lineColor="14263149" lineWidth="1">
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_90i1JLeJEeiznvkN3YybYg" type="DiagramName">
+            <element xsi:nil="true"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_90i1JbeJEeiznvkN3YybYg" type="Description">
+            <element xsi:nil="true"/>
+          </children>
+          <styles xmi:type="notation:TextStyle" xmi:id="_90i1IbeJEeiznvkN3YybYg"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_90i1IreJEeiznvkN3YybYg"/>
+          <element xsi:nil="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_90i1I7eJEeiznvkN3YybYg" x="7655" y="1056" width="7478" height="12602"/>
+        </children>
+        <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_lPn1MLeGEeiznvkN3YybYg" element="_lPeEMLeGEeiznvkN3YybYg" fontName="Segoe UI" fontHeight="8" fillColor="15912618" transparency="0" lineColor="15912618" lineWidth="1" showStereotype="Label">
+          <children xmi:type="notation:DecorationNode" xmi:id="_lPn1MreGEeiznvkN3YybYg" type="ImageCompartment">
+            <layoutConstraint xmi:type="notation:Size" xmi:id="_lPn1M7eGEeiznvkN3YybYg" width="1455" height="2381"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_lPn1NLeGEeiznvkN3YybYg" type="Stereotype"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_lPn1NbeGEeiznvkN3YybYg" type="Name"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_lPw_ILeGEeiznvkN3YybYg" type="Parent"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lPn1MbeGEeiznvkN3YybYg" x="2244" y="5148"/>
+        </children>
+        <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_tMRisbeGEeiznvkN3YybYg" element="_tMRisLeGEeiznvkN3YybYg" fontName="Segoe UI" fontHeight="8" fillColor="15912618" transparency="0" lineColor="15912618" lineWidth="1" showStereotype="Label">
+          <children xmi:type="notation:DecorationNode" xmi:id="_tMRis7eGEeiznvkN3YybYg" type="ImageCompartment">
+            <layoutConstraint xmi:type="notation:Size" xmi:id="_tMRitLeGEeiznvkN3YybYg" width="1455" height="2381"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_tMRitbeGEeiznvkN3YybYg" type="Stereotype"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_tMRitreGEeiznvkN3YybYg" type="Name"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_tMRit7eGEeiznvkN3YybYg" type="Parent"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tMRisreGEeiznvkN3YybYg" x="19008" y="5148"/>
+        </children>
+        <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_lOY-wLeJEeiznvkN3YybYg" element="_lOP00LeJEeiznvkN3YybYg" fontName="Segoe UI" fontHeight="8" fillColor="16116705" transparency="0" lineColor="14263149" lineWidth="1" showStereotype="Label">
+          <children xmi:type="notation:DecorationNode" xmi:id="_lOY-wreJEeiznvkN3YybYg" type="ImageCompartment">
+            <layoutConstraint xmi:type="notation:Size" xmi:id="_lOY-w7eJEeiznvkN3YybYg" width="2216" height="1322"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_lOY-xLeJEeiznvkN3YybYg" type="Stereotype"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_lOY-xbeJEeiznvkN3YybYg" type="Name"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_lOY-xreJEeiznvkN3YybYg" type="Parent"/>
+          <children xmi:type="notation:ListCompartment" xmi:id="_lOY-x7eJEeiznvkN3YybYg" visible="false" type="Extension_Points"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lOY-wbeJEeiznvkN3YybYg" x="10032" y="1980"/>
+        </children>
+        <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_o7LZkbeJEeiznvkN3YybYg" element="_o7LZkLeJEeiznvkN3YybYg" fontName="Segoe UI" fontHeight="8" fillColor="16116705" transparency="0" lineColor="14263149" lineWidth="1" showStereotype="Label">
+          <children xmi:type="notation:DecorationNode" xmi:id="_o7LZk7eJEeiznvkN3YybYg" type="ImageCompartment">
+            <layoutConstraint xmi:type="notation:Size" xmi:id="_o7LZlLeJEeiznvkN3YybYg" width="2216" height="1322"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_o7LZlbeJEeiznvkN3YybYg" type="Stereotype"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_o7LZlreJEeiznvkN3YybYg" type="Name"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_o7LZl7eJEeiznvkN3YybYg" type="Parent"/>
+          <children xmi:type="notation:ListCompartment" xmi:id="_o7LZmLeJEeiznvkN3YybYg" visible="false" type="Extension_Points"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_o7LZkreJEeiznvkN3YybYg" x="9372" y="5676"/>
+        </children>
+        <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_rOp4EbeJEeiznvkN3YybYg" element="_rOp4ELeJEeiznvkN3YybYg" fontName="Segoe UI" fontHeight="8" fillColor="16116705" transparency="0" lineColor="14263149" lineWidth="1" showStereotype="Label">
+          <children xmi:type="notation:DecorationNode" xmi:id="_rOp4E7eJEeiznvkN3YybYg" type="ImageCompartment">
+            <layoutConstraint xmi:type="notation:Size" xmi:id="_rOp4FLeJEeiznvkN3YybYg" width="2216" height="1322"/>
+          </children>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_rOp4FbeJEeiznvkN3YybYg" type="Stereotype"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_rOp4FreJEeiznvkN3YybYg" type="Name"/>
+          <children xmi:type="notation:BasicDecorationNode" xmi:id="_rOp4F7eJEeiznvkN3YybYg" type="Parent"/>
+          <children xmi:type="notation:ListCompartment" xmi:id="_rOp4GLeJEeiznvkN3YybYg" visible="false" type="Extension_Points"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rOp4EreJEeiznvkN3YybYg" x="9900" y="10032"/>
+        </children>
+        <edges xmi:type="notation:Connector" xmi:id="_hiiGILeLEeiznvkN3YybYg" type="line" source="_lPn1MLeGEeiznvkN3YybYg" target="_lOY-wLeJEeiznvkN3YybYg" roundedBendpointsRadius="4" lineColor="8421504" lineWidth="1">
+          <styles xmi:type="notation:ArrowStyle" xmi:id="_hiiGIbeLEeiznvkN3YybYg" arrowTarget="OpenArrow"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_hiiGIreLEeiznvkN3YybYg"/>
+          <element xsi:nil="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hiiGI7eLEeiznvkN3YybYg" points="[31, -10, -266, 70]$[247, -79, -50, 1]"/>
+        </edges>
+        <edges xmi:type="notation:Connector" xmi:id="_lSvBULeLEeiznvkN3YybYg" type="line" source="_lPn1MLeGEeiznvkN3YybYg" target="_o7LZkbeJEeiznvkN3YybYg" roundedBendpointsRadius="4" lineColor="8421504" lineWidth="1">
+          <styles xmi:type="notation:ArrowStyle" xmi:id="_lSvBUbeLEeiznvkN3YybYg" arrowTarget="OpenArrow"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_lSvBUreLEeiznvkN3YybYg"/>
+          <element xsi:nil="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lSvBU7eLEeiznvkN3YybYg" points="[32, 3, -269, -17]$[252, 25, -49, 5]"/>
+        </edges>
+        <edges xmi:type="notation:Connector" xmi:id="_msPx8LeLEeiznvkN3YybYg" type="line" source="_lPn1MLeGEeiznvkN3YybYg" target="_rOp4EbeJEeiznvkN3YybYg" roundedBendpointsRadius="4" lineColor="8421504" lineWidth="1">
+          <styles xmi:type="notation:ArrowStyle" xmi:id="_msPx8beLEeiznvkN3YybYg" arrowTarget="OpenArrow"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_msPx8reLEeiznvkN3YybYg"/>
+          <element xsi:nil="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_msPx87eLEeiznvkN3YybYg" points="[18, 9, -284, -128]$[254, 139, -48, 2]"/>
+        </edges>
+        <edges xmi:type="notation:Connector" xmi:id="_olGxALeLEeiznvkN3YybYg" type="line" source="_tMRisbeGEeiznvkN3YybYg" target="_rOp4EbeJEeiznvkN3YybYg" roundedBendpointsRadius="4" lineColor="8421504" lineWidth="1">
+          <styles xmi:type="notation:ArrowStyle" xmi:id="_olGxAbeLEeiznvkN3YybYg" arrowTarget="OpenArrow"/>
+          <styles xmi:type="notation:LineTypeStyle" xmi:id="_olGxAreLEeiznvkN3YybYg"/>
+          <element xsi:nil="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_olGxA7eLEeiznvkN3YybYg" points="[-19, 9, 311, -128]$[-283, 139, 47, 2]"/>
+        </edges>
+      </contents>
+    </eAnnotations>
+    <packageImport xmi:id="_oZeJw7eAEeiznvkN3YybYg">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_yU9igLeAEeiznvkN3YybYg" name="UseCase1"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_lPeEMLeGEeiznvkN3YybYg" name="Corretor"/>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_tMRisLeGEeiznvkN3YybYg" name="Gerente"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_R2TvwLeJEeiznvkN3YybYg" name="Cadastrar Segurado">
+      <ownedComment xmi:id="_cwRGcLeKEeiznvkN3YybYg" annotatedElement="_R2TvwLeJEeiznvkN3YybYg">
+        <body>&lt;p>&lt;/p></body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_hvvGkLeJEeiznvkN3YybYg" name="Cadastrar veículo">
+      <ownedComment xmi:id="_d67iwLeKEeiznvkN3YybYg" annotatedElement="_hvvGkLeJEeiznvkN3YybYg">
+        <body>&lt;p >&lt;/p>&lt;table  border=&quot;1&quot;>&lt;col width=&quot;50.0%&quot;>&lt;/col>&lt;col width=&quot;50.0%&quot;>&lt;/col>&lt;tr>&lt;td >&lt;p >Descrição&lt;/p>&lt;/td>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;/tr>&lt;tr>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;/tr>&lt;tr>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;/tr>&lt;tr>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;/tr>&lt;tr>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;/tr>&lt;tr>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;td >&lt;p >&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;p >&lt;/p></body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_lOP00LeJEeiznvkN3YybYg" name="Vender Seguro">
+      <ownedComment xmi:id="_u42YQLeREeiznvkN3YybYg" annotatedElement="_lOP00LeJEeiznvkN3YybYg">
+        <body>&lt;p>Vender Seguro&lt;/p>&lt;p>Descrição: Corretor deve conseguir vender seguro, relacionando a venda a um cliente, a um veículo e selecionando parâmetros da apólice. O sistema deve calcular e fornecer os valores de franquia, prêmio e valor segurado. A partir disso, o corretor deve poder editar os dados, ou salvar a apólice.&lt;/p>&lt;p>Evento iniciador: Corretor clica em “Vender seguro”&lt;/p>&lt;p>Ator(es): Corretor&lt;/p>&lt;p>Pré-condição: Corretor logado no sistema, cliente cadastrado no sistema, veículo cadastrado no sistema.&lt;/p>&lt;p>Sequência de eventos: &lt;/p>&lt;p>1. Corretor busca cliente por CPF.&lt;/p>&lt;p>2. Corretor seleciona cliente.&lt;/p>&lt;p>3. Corretor busca veículo por marca e/ou modelo.&lt;/p>&lt;p>4. Corretor seleciona veículo.&lt;/p>&lt;p>5. Corretor seleciona parâmetros da apólice.&lt;/p>&lt;p>6. Corretor clica em calcular valores.&lt;/p>&lt;p>7. Sistema calcula valores de franquia, prêmio e valor segurado, com base nos parâmetros selecionados.&lt;/p>&lt;p>8. Sistema exibe os valores calculados.&lt;/p>&lt;p>9. Corretor confirma a venda.&lt;/p>&lt;p>10. Sistema salva apólice no banco de dados.&lt;/p>&lt;p>11. Fim do caso de uso.&lt;/p>&lt;p>Pós-condição: Apólice salva no banco de dados.&lt;/p>&lt;p>Extensões: &lt;/p>&lt;p>1. Corretor não confirma a venda (Passo 9): Sistema retorna para o passo 5, para que os parâmetros sejam selecionados novamente.&lt;/p>&lt;p>Inclusões: Não há. &lt;/p>&lt;p>&lt;/p></body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_o7LZkLeJEeiznvkN3YybYg" name="Alterar Status da apólice">
+      <ownedComment xmi:id="_85oycLeREeiznvkN3YybYg" annotatedElement="_o7LZkLeJEeiznvkN3YybYg">
+        <body>&lt;p>Nome: Alterar Status de uma apólice&lt;/p>&lt;p>Descrição: O corretor poderá fazer a alteração da apólice de cada cliente&lt;/p>&lt;p>Evento iniciador: &lt;/p>&lt;p>Ator(es): Corretor&lt;/p>&lt;p>Pré-condição: Corretor logado no sistema, clientes registrados no sistema devidamente com suas respectivas apólices&lt;/p>&lt;p>Sequência de eventos: &lt;/p>&lt;p>Fluxo Básico&lt;/p>&lt;p>Corretor solicita alterar status da apólice de um cliente&lt;/p>&lt;p>Sistema solicita o ID do cliente desejado&lt;/p>&lt;p>Corretor insere os dados do cliente, ou o número da apólice&lt;/p>&lt;p>Sistema exibe as informações do seguro do cliente solicitado e as opções de alterar, incluir ou deletar&lt;/p>&lt;p>Corretor solicita alterar o seguro do cliente&lt;/p>&lt;p>Sistema exibe os campos existentes que podem ser alterados&lt;/p>&lt;p>Corretor modifica os campos que devem ser alterados&lt;/p>&lt;p>Sistema registra a alteração do seguro e seu novo status&lt;/p>&lt;p>Pós-condição: &lt;/p>&lt;p>Extensões: &lt;/p>&lt;p>Corretor deseja incluir novo seguro (passo 5): Chama caso de uso Vender Seguro no passo 3.&lt;/p>&lt;p>Inclusões: Vender Seguro.&lt;/p></body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_rOp4ELeJEeiznvkN3YybYg" name="Gerar relatório">
+      <ownedComment xmi:id="_AJjEALeSEeiznvkN3YybYg" annotatedElement="_rOp4ELeJEeiznvkN3YybYg">
+        <body>&lt;p>Nome: Gerar relatório&lt;/p>&lt;p>Descrição: Sistema monta um relatório mensal das estatísticas referentes às vendas de seguros, bem como o status das apólices, e o exibe na tela. &lt;/p>&lt;p>Evento iniciador: &lt;/p>&lt;p>Ator(es): Gerente da corretora&lt;/p>&lt;p>Pré-condição: Gerente logado e apólices e informações dos seguros armazenados no banco de dados do sistema&lt;/p>&lt;p>Sequência de eventos: &lt;/p>&lt;p>Gerente requisita no sistema um relatório geral de todas as apólices&lt;/p>&lt;p>Sistema fornece todas as informações referentes de seguros no que se diz respeito ao valor total faturado, número de segurados e informações das apólices e seus status.&lt;/p>&lt;p>Pós-condição: Sistema exibe na tela o relatório geral de seguros&lt;/p>&lt;p>Extensões: Não há&lt;/p>&lt;p>Inclusões: Não há.&lt;/p></body>
+      </ownedComment>
+    </packagedElement>
+    <profileApplication xmi:id="_oZeJxLeAEeiznvkN3YybYg">
+      <eAnnotations xmi:id="_oZeJxbeAEeiznvkN3YybYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Standard.profile.uml#_yzU58YinEdqtvbnfB2L_5w"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+    <profileApplication xmi:id="_oZeJxreAEeiznvkN3YybYg">
+      <eAnnotations xmi:id="_oZeJx7eAEeiznvkN3YybYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML2_MSL_PROFILES/Default.epx#_fNwoAAqoEd6-N_NOT9vsCA?Default/Default?"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML2_MSL_PROFILES/Default.epx#_a_S3wNWLEdiy4IqP8whjFA?Default?"/>
+    </profileApplication>
+    <profileApplication xmi:id="_oZeJyLeAEeiznvkN3YybYg">
+      <eAnnotations xmi:id="_oZeJybeAEeiznvkN3YybYg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML2_MSL_PROFILES/Deployment.epx#_4OVBUD0TEeKt-L0gyEptgQ?Deployment/Deployment?"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML2_MSL_PROFILES/Deployment.epx#_vjbuwOvHEdiDX5bji0iVSA?Deployment?"/>
+    </profileApplication>
+  </uml:Package>
+  <Default:Documentation xmi:id="_cwRGcbeKEeiznvkN3YybYg" base_Comment="_cwRGcLeKEeiznvkN3YybYg"/>
+  <Default:Documentation xmi:id="_d67iwbeKEeiznvkN3YybYg" base_Comment="_d67iwLeKEeiznvkN3YybYg"/>
+  <Default:Documentation xmi:id="_u4_iMLeREeiznvkN3YybYg" base_Comment="_u42YQLeREeiznvkN3YybYg"/>
+  <Default:Documentation xmi:id="_85oycbeREeiznvkN3YybYg" base_Comment="_85oycLeREeiznvkN3YybYg"/>
+  <Default:Documentation xmi:id="_AJjEAbeSEeiznvkN3YybYg" base_Comment="_AJjEALeSEeiznvkN3YybYg"/>
+</xmi:XMI>
