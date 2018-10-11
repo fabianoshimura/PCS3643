@@ -145,7 +145,8 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Rl8F0sgOEeiOlMzbg168IA" value="*"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rl8F0cgOEeiOlMzbg168IA"/>
     </ownedAttribute>
-    <ownedOperation xmi:id="_1HSJUMgMEeiOlMzbg168IA" name="GerarRelatorio"/>
+    <ownedOperation xmi:id="_1HSJUMgMEeiOlMzbg168IA" name="mostraDados"/>
+    <ownedOperation xmi:id="_fjlXEM2NEeix5IKyXao0CA" name="mostraFormMes"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_uB4z8MgMEeiOlMzbg168IA" name="Tela_Relatorio">
     <ownedAttribute xmi:id="_6taEUMgMEeiOlMzbg168IA" name="mes" visibility="private"/>
@@ -157,6 +158,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Pnwh4sgOEeiOlMzbg168IA" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Pnwh4cgOEeiOlMzbg168IA" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_eBn1EM2NEeix5IKyXao0CA" name="setMes"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_PnussMgOEeiOlMzbg168IA" memberEnd="_PnvTwMgOEeiOlMzbg168IA _Pnwh4MgOEeiOlMzbg168IA"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_Rl7ewMgOEeiOlMzbg168IA">

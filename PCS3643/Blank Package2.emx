@@ -150,9 +150,12 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NGKu4cgOEeiOlMzbg168IA" value="*"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NGKu4MgOEeiOlMzbg168IA"/>
     </ownedAttribute>
-    <ownedOperation xmi:id="_aT5mYMgMEeiOlMzbg168IA" name="Alterar_Status"/>
+    <ownedOperation xmi:id="_aT5mYMgMEeiOlMzbg168IA" name="mostraFormNumero"/>
+    <ownedOperation xmi:id="_mazGgM2NEeix5IKyXao0CA" name="buscaApolice"/>
+    <ownedOperation xmi:id="_rKX0AM2NEeix5IKyXao0CA" name="mostraApolice"/>
+    <ownedOperation xmi:id="_sMv3AM2NEeix5IKyXao0CA" name="alterarStatus"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_sUnkYMgNEeiOlMzbg168IA" name="Tela_Apolice">
+  <packagedElement xmi:type="uml:Class" xmi:id="_sUnkYMgNEeiOlMzbg168IA" name="Tela_AlterarStatus">
     <ownedAttribute xmi:id="_1oN2sMgNEeiOlMzbg168IA" name="nomeSegurado" visibility="private"/>
     <ownedAttribute xmi:id="_5gUwsMgNEeiOlMzbg168IA" name="CPF" visibility="private"/>
     <ownedAttribute xmi:id="_55zAoMgNEeiOlMzbg168IA" name="dataNascimento" visibility="private"/>
@@ -171,6 +174,9 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KonuYsgOEeiOlMzbg168IA" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KonuYcgOEeiOlMzbg168IA" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_yJ-qcM2NEeix5IKyXao0CA" name="setNumero"/>
+    <ownedOperation xmi:id="_zJxTgM2NEeix5IKyXao0CA" name="selecionarStatus"/>
+    <ownedOperation xmi:id="_0IyggM2NEeix5IKyXao0CA" name="alterarStatus"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_KomgQMgOEeiOlMzbg168IA" memberEnd="_KonHUMgOEeiOlMzbg168IA _KonuYMgOEeiOlMzbg168IA"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_NGJgwMgOEeiOlMzbg168IA">

@@ -377,6 +377,13 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Rl9T8MgOEeiOlMzbg168IA" value="1"/>
       <association href="Blank%20Package3.emx#_Rl7ewMgOEeiOlMzbg168IA?Class_Diagram_GerarRelatorio/%3CAssociation%3E?"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_OPL3EM2NEeix5IKyXao0CA" name="setDadosCliente"/>
+    <ownedOperation xmi:id="_PRHOIM2NEeix5IKyXao0CA" name="setDadosVeiculo"/>
+    <ownedOperation xmi:id="_SQ6AEM2NEeix5IKyXao0CA" name="setDadosApolice"/>
+    <ownedOperation xmi:id="_U2KLEM2NEeix5IKyXao0CA" name="calculaValores"/>
+    <ownedOperation xmi:id="_VzpuEM2NEeix5IKyXao0CA" name="gerarNumero"/>
+    <ownedOperation xmi:id="_W0MlEM2NEeix5IKyXao0CA" name="salvarApolice"/>
+    <ownedOperation xmi:id="_cId7EM2NEeix5IKyXao0CA" name="gerarRelatorio"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_kRnJgMgIEeiOlMzbg168IA" name="Controle_Venda">
     <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_OXiCYMgJEeiOlMzbg168IA"/>
@@ -404,7 +411,12 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yn95IcgKEeiOlMzbg168IA" value="*"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yn95IMgKEeiOlMzbg168IA"/>
     </ownedAttribute>
-    <ownedOperation xmi:id="_TDuEsMgJEeiOlMzbg168IA" name="venderSeguro"/>
+    <ownedOperation xmi:id="_TDuEsMgJEeiOlMzbg168IA" name="iniciaVenda"/>
+    <ownedOperation xmi:id="_Fd_HMM2NEeix5IKyXao0CA" name="setDadosCliente"/>
+    <ownedOperation xmi:id="_GpvIoM2NEeix5IKyXao0CA" name="setOpcoesFipe"/>
+    <ownedOperation xmi:id="_IjRdIM2NEeix5IKyXao0CA" name="setDadosVeiculo"/>
+    <ownedOperation xmi:id="_JrSOEM2NEeix5IKyXao0CA" name="setDadosApolice"/>
+    <ownedOperation xmi:id="_LD8qIM2NEeix5IKyXao0CA" name="confirmarVenda"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_qqn6AMgIEeiOlMzbg168IA" name="Tela_Cliente">
     <ownedAttribute xmi:id="_s6gcgMgJEeiOlMzbg168IA" name="nomeSegurado" visibility="private"/>
@@ -416,6 +428,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5FJNYcgJEeiOlMzbg168IA" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5FJNYMgJEeiOlMzbg168IA" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_nUjOcM2MEeix5IKyXao0CA" name="mostraFormCliente"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_sU5qgMgIEeiOlMzbg168IA" name="Tela_Veiculo">
     <ownedAttribute xmi:id="_mgDhkMgJEeiOlMzbg168IA" name="marcaVeiculo" visibility="private"/>
@@ -425,6 +438,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_n3k4ssgKEeiOlMzbg168IA" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_n3k4scgKEeiOlMzbg168IA" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_8Ys9sM2MEeix5IKyXao0CA" name="mostraFormVeiculo"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_txXogMgIEeiOlMzbg168IA" name="Tela_Apolice">
     <ownedAttribute xmi:id="_FnxAcMgKEeiOlMzbg168IA" name="valorContraracao" visibility="private"/>
@@ -435,6 +449,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vI5KMsgKEeiOlMzbg168IA" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vI5KMcgKEeiOlMzbg168IA" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_-A64sM2MEeix5IKyXao0CA" name="mostraFormApolice"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_vDFIAMgIEeiOlMzbg168IA" name="Tela_Valores">
     <ownedAttribute xmi:id="_BxVhcMgKEeiOlMzbg168IA" name="valorFranquia" visibility="private"/>
@@ -444,6 +459,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yn-gMsgKEeiOlMzbg168IA" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yn-gMcgKEeiOlMzbg168IA" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="__taPsM2MEeix5IKyXao0CA" name="mostraValores"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_BjdS8MgJEeiOlMzbg168IA" name="API_FIPE">
     <ownedAttribute xmi:id="_Rb_ccMgKEeiOlMzbg168IA" name="marcaVeiculo" visibility="private"/>
@@ -453,6 +469,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_juh_ssgKEeiOlMzbg168IA" value="1"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_juh_scgKEeiOlMzbg168IA" value="1"/>
     </ownedAttribute>
+    <ownedOperation xmi:id="_p7_x0M2MEeix5IKyXao0CA" name="getOpcoesFipe"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_5FHYMMgJEeiOlMzbg168IA" memberEnd="_5FH_QMgJEeiOlMzbg168IA _5FImUsgJEeiOlMzbg168IA"/>
   <packagedElement xmi:type="uml:Association" xmi:id="__MC6MMgJEeiOlMzbg168IA" memberEnd="__MDhQMgJEeiOlMzbg168IA __MEvYMgJEeiOlMzbg168IA"/>
