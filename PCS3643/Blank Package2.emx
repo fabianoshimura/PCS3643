@@ -154,6 +154,7 @@
     <ownedOperation xmi:id="_mazGgM2NEeix5IKyXao0CA" name="buscaApolice"/>
     <ownedOperation xmi:id="_rKX0AM2NEeix5IKyXao0CA" name="mostraApolice"/>
     <ownedOperation xmi:id="_sMv3AM2NEeix5IKyXao0CA" name="alterarStatus"/>
+    <ownedOperation xmi:id="_Vveb4M2REeix5IKyXao0CA" name="iniciarAlteracao"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_sUnkYMgNEeiOlMzbg168IA" name="Tela_AlterarStatus">
     <ownedAttribute xmi:id="_1oN2sMgNEeiOlMzbg168IA" name="nomeSegurado" visibility="private"/>

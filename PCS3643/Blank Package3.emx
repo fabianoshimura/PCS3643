@@ -147,6 +147,7 @@
     </ownedAttribute>
     <ownedOperation xmi:id="_1HSJUMgMEeiOlMzbg168IA" name="mostraDados"/>
     <ownedOperation xmi:id="_fjlXEM2NEeix5IKyXao0CA" name="mostraFormMes"/>
+    <ownedOperation xmi:id="_Ycqa4M2REeix5IKyXao0CA" name="iniciarGerarRelatorio"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_uB4z8MgMEeiOlMzbg168IA" name="Tela_Relatorio">
     <ownedAttribute xmi:id="_6taEUMgMEeiOlMzbg168IA" name="mes" visibility="private"/>
