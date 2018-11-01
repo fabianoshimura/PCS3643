@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Apolice {
 
-    public Apolice(String marcaVeiculo, String modeloVeiculo, String anoVeiculo, Double valorContratacao, TipoFranquiaCasco tipoFranquiaCasco, Boolean franquiaAcessorios, Double valorFranquia, Double valorPremio, Double valorSegurado, int numeroApolice, String nomeSegurado, String CPF, String email, String endereco, Date dataNascimento, Status status) {
+    public Apolice(String marcaVeiculo, String modeloVeiculo, int anoVeiculo, Double valorContratacao, TipoFranquiaCasco tipoFranquiaCasco, Boolean franquiaAcessorios, Double valorFranquia, Double valorPremio, Double valorSegurado, int numeroApolice, String nomeSegurado, String CPF, String email, String endereco, Date dataNascimento, Status status) {
         this.marcaVeiculo = marcaVeiculo;
         this.modeloVeiculo = modeloVeiculo;
         this.anoVeiculo = anoVeiculo;
@@ -27,7 +27,7 @@ public class Apolice {
 
     private String modeloVeiculo;
 
-    private String anoVeiculo;
+    private int anoVeiculo;
 
     private Double valorContratacao;
 
@@ -71,11 +71,11 @@ public class Apolice {
         this.modeloVeiculo = modeloVeiculo;
     }
 
-    public String getAnoVeiculo() {
+    public int getAnoVeiculo() {
         return anoVeiculo;
     }
 
-    public void setAnoVeiculo(String anoVeiculo) {
+    public void setAnoVeiculo(int anoVeiculo) {
         this.anoVeiculo = anoVeiculo;
     }
 
