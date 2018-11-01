@@ -30,35 +30,7 @@ public class ApoliceController extends HttpServlet {
         
         ArrayList<Apolice> apolices = new ArrayList<Apolice>();
 
-        apolices.add(new Apolice("Volkswagen", "UP!", "2015", 15000.0,
-                TipoFranquiaCasco.Obrigatoria, true, 20000.0, 10000.0, 10000.0,
-                1, "Pedro Darvas", "123.456.789-10", "pedro.darvas@usp.br",
-                "Politecnica", new Date(865641600), Status.Ativa));
-
-        apolices.add(new Apolice("Volkswagen", "GOL", "2017", 15000.0,
-                TipoFranquiaCasco.Obrigatoria, true, 20000.0, 10000.0, 10000.0,
-                2, "Fabiano Shimura", "123.456.789-10", "fabiano.shimura@usp.br",
-                "Politecnica", new Date(865641600), Status.Ativa));
-
-        apolices.add(new Apolice("BMW", "UP!", "2018", 15000.0,
-                TipoFranquiaCasco.Obrigatoria, true, 20000.0, 10000.0, 10000.0,
-                3, "Kechi Hirama", "123.456.789-10", "kechi.hirama@usp.br",
-                "Politecnica", new Date(865641600), Status.Ativa));
-
-        apolices.add(new Apolice("Fiat", "Uno", "2011", 15000.0,
-                TipoFranquiaCasco.Obrigatoria, true, 20000.0, 10000.0, 10000.0,
-                4, "Selma Melnikoff", "123.456.789-10", "selma.melnikoff@usp.br",
-                "Politecnica", new Date(865641600), Status.Ativa));
-
-        apolices.add(new Apolice("Volkswagen", "Chevette", "1900", 15000.0,
-                TipoFranquiaCasco.Obrigatoria, true, 20000.0, 10000.0, 10000.0,
-                5, "Cristiano Ronaldo", "123.456.789-10", "cristiano.ronaldo@usp.br",
-                "Politecnica", new Date(865641600), Status.Ativa));
-
-        apolices.add(new Apolice("Volkswagen", "UP!", "2015", 15000.0,
-                TipoFranquiaCasco.Obrigatoria, true, 20000.0, 10000.0, 10000.0,
-                13, "Fernando Haddad", "123.456.789-10", "pedro.darvas@usp.br",
-                "Politecnica", new Date(865641600), Status.Ativa));
+        
 
         if (request.getParameter("numeroApolice") != null) {
             int numeroApolice = Integer.parseInt(request.getParameter("numeroApolice"));

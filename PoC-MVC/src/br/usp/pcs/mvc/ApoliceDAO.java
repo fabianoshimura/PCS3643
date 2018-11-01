@@ -79,8 +79,8 @@ public class ApoliceDAO {
 			
 			
 			try {
-				return new Apolice(res.getString("marcaVeiculo"), res.getString("modeloVeiculo"), res.getInt("anoVeiculo"), res.getInt("valorContratacao"), res.getString("tipoFranquiaCasco"), res.getBoolean("franquiaAcessorios"), res.getInt("valorFranquia"), res.getInt("valorPremio"), res.getInt("valorSegurado"), res.getInt("numeroApolice"), res.getString("nomeSegurado"), res.getString("CPF"), res.getString("email"), res.getString("endereco"), res.getString("dataNascimento"), res.getString("status"));
-			//public Apolice(String marcaVeiculo, String modeloVeiculo, String anoVeiculo, Double valorContratacao, TipoFranquiaCasco tipoFranquiaCasco, Boolean franquiaAcessorios, Double valorFranquia, Double valorPremio, Double valorSegurado, int numeroApolice, String nomeSegurado, String CPF, String email, String endereco, Date dataNascimento, Status status) {
+				return new Apolice(res.getString("marcaVeiculo"), res.getString("modeloVeiculo"), res.getInt("anoVeiculo"), res.getDouble("valorContratacao"), TipoFranquiaCasco.valueOf(res.getString("tipoFranquiaCasco")), res.getBoolean("franquiaAcessorios"), res.getDouble("valorFranquia"), res.getDouble("valorPremio"), res.getDouble("valorSegurado"), res.getInt("numeroApolice"), res.getString("nomeSegurado"), res.getString("CPF"), res.getString("email"), res.getString("endereco"), res.getDate("dataNascimento"), Status.valueOf(res.getString("status")));
+			
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new RuntimeException(e);
