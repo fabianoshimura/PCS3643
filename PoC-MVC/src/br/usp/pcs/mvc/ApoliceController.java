@@ -24,6 +24,10 @@ public class ApoliceController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher;
 
+        
+        
+        
+        
         ArrayList<Apolice> apolices = new ArrayList<Apolice>();
 
         apolices.add(new Apolice("Volkswagen", "UP!", "2015", 15000.0,
