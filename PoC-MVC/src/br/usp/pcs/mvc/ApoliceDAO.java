@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -68,11 +69,39 @@ public class ApoliceDAO {
 				}
 			}
 		}
-			
-			
-	
-				
 
+		public List<Apolice> getAll() {
+            String query = "SELECT * FROM Apolice";
+
+            PreparedStatement statement = null;
+            ResultSet result = null;
+            try {
+                statement = connection.prepareStatement(query);
+                result = statement.executeQuery();
+                ArrayList<Apolice> list = new ArrayList<>();
+                while (result.next()) {
+                    list.add(apoliceFromResult(result));
+                }
+                return list;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                System.out.println("Query failed");
+                throw new RuntimeException(e);
+            } finally {
+                try {
+                    result.close();
+                } catch (SQLException e1) {
+                }
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                }
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                }
+            }
+        }
 
 		private Apolice apoliceFromResult(ResultSet res) {
 			
@@ -80,7 +109,7 @@ public class ApoliceDAO {
 			
 			try {
 				return new Apolice(res.getString("marcaVeiculo"), res.getString("modeloVeiculo"), res.getInt("anoVeiculo"), res.getDouble("valorContratacao"), TipoFranquiaCasco.valueOf(res.getString("tipoFranquiaCasco")), res.getBoolean("franquiaAcessorios"), res.getDouble("valorFranquia"), res.getDouble("valorPremio"), res.getDouble("valorSegurado"), res.getInt("numeroApolice"), res.getString("nomeSegurado"), res.getString("CPF"), res.getString("email"), res.getString("endereco"), res.getDate("dataNascimento"), Status.valueOf(res.getString("status")));
-			
+
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new RuntimeException(e);
