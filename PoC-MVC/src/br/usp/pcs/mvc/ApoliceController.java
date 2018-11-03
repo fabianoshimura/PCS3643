@@ -13,49 +13,36 @@ import java.util.Date;
 @WebServlet("/apolices")
 public class ApoliceController extends HttpServlet {
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher;
 
-        
-        
-        
-        
-        ArrayList<Apolice> apolices = new ArrayList<Apolice>();
+        ArrayList<Apolice> apolices;
 
-        
+        ApoliceDAO dao = new ApoliceDAO();
+
+        apolices = dao.getAll();
 
         if (request.getParameter("numeroApolice") != null) {
             int numeroApolice = Integer.parseInt(request.getParameter("numeroApolice"));
 
             requestDispatcher = getServletContext().getRequestDispatcher("/detalhe.jsp");
-            Apolice apoliceDetail = null;
+            Apolice apoliceDetail;
 
-            for (Apolice apolice : apolices) {
-                if (apolice.getNumeroApolice() == numeroApolice) {
-                    apoliceDetail = apolice;
-                    break;
-                }
-            }
+            apoliceDetail = dao.getApolice(numeroApolice);
 
             if (apoliceDetail == null) {
                 throw new Error("Not Found");
             }
 
             request.setAttribute("apolice", apoliceDetail);
-
         } else {
             requestDispatcher = getServletContext().getRequestDispatcher("/lista.jsp");
 
             request.setAttribute("apolices", apolices);
-
         }
 
         requestDispatcher.forward(request, response);
