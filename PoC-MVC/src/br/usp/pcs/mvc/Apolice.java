@@ -1,8 +1,14 @@
 package br.usp.pcs.mvc;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Apolice {
+
+    public Apolice() {
+
+    }
 
     public Apolice(String marcaVeiculo, String modeloVeiculo, int anoVeiculo, Double valorContratacao, TipoFranquiaCasco tipoFranquiaCasco, Boolean franquiaAcessorios, Double valorFranquia, Double valorPremio, Double valorSegurado, int numeroApolice, String nomeSegurado, String CPF, String email, String endereco, Date dataNascimento, Status status) {
         this.marcaVeiculo = marcaVeiculo;
@@ -183,7 +189,21 @@ public class Apolice {
         this.status = status;
     }
 
+    public void setDadosCliente(String nome, String email, String cpf, String endereco, String dataNascimento) throws ParseException {
+        setNomeSegurado(nome);
+        setEmail(email);
+        setCPF(cpf);
+        setEndereco(endereco);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        setDataNascimento(format.parse(dataNascimento));
+    }
 
+    public void setDadosVeiculo(String marcaVeiculo, String modeloVeiculo, String anoVeiculo, String valorContratacao) {
+        setMarcaVeiculo(marcaVeiculo);
+        setModeloVeiculo(modeloVeiculo);
+        setAnoVeiculo(Integer.parseInt(anoVeiculo));
+        setValorContratacao(Double.parseDouble(valorContratacao));
+    }
 }
 
 enum TipoFranquiaCasco {

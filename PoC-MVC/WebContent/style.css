@@ -1,0 +1,48 @@
+body {
+    background-color: #328CC1 !important;
+}
+
+.content {
+    margin-top: 30px;
+    border-radius: 4px;
+    padding: 20px;
+    background-color: #D98310;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+label {
+    font-size: 1.4rem;
+}
+
+.form-check {
+    margin-left: 15px;
+}
+
+.form-check-label {
+    font-size: 1.2rem;
+}
+
+.franquia {
+    margin-left: 15px !important;
+}
+
+.franquia label {
+    font-size: 1.2rem;
+}
+
+.info > p{
+    margin-left: 10px;
+}
+
+.navbar {
+    background-color: #0B3C5D;
+}
+
+.nav-link, .navbar-brand {
+    color: aliceblue !important;
+}
