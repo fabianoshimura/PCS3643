@@ -1,4 +1,4 @@
-package br.usp.pcs.mvc;
+package br.usp.pcs.mvc.venderseguro;
 
 import com.google.gson.Gson;
 import org.apache.http.HttpHeaders;

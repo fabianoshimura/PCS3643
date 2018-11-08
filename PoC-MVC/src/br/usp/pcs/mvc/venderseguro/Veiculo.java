@@ -1,4 +1,4 @@
-package br.usp.pcs.mvc;
+package br.usp.pcs.mvc.venderseguro;
 
 public class Veiculo {
     int marca = 0;
