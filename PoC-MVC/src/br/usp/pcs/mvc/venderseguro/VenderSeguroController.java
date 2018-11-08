@@ -53,7 +53,7 @@ public class VenderSeguroController extends HttpServlet {
     String action = request.getParameter("action");
 
     if (action == null) {
-      throw new ServletException();
+      goToInitialScreen(request, response);
     }
 
     switch (action) {
@@ -77,11 +77,19 @@ public class VenderSeguroController extends HttpServlet {
       case "getVeiculo":
         handler = new GetVeiculoInfoHandler(request, response, apolice, veiculo);
       default:
-        throw new ServletException();
+        goToInitialScreen(request, response);
     }
     handler.validateInputs();
     handler.execute();
   }
+
+  private void goToInitialScreen(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    RequestDispatcher requestDispatcher;
+
+    requestDispatcher = getServletContext().getRequestDispatcher("/vender-seguro-cliente.jsp");
+    requestDispatcher.forward(request, response);
+  }
+
 
 //  private void goToClienteStep() throws ServletException, IOException {
 //    RequestDispatcher requestDispatcher;

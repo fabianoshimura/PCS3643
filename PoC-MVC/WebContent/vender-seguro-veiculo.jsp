@@ -42,7 +42,7 @@ pageEncoding="ISO-8859-1"%>
   <h1>Vender Seguro</h1>
   <h2>Preencha os parâmetros da apólice:</h2>
   <div class="content">
-    <form id="form-veiculo" action="vender-seguro?step=2" method="post">
+    <form id="form-veiculo" action="vender-seguro?action=setVeiculo" method="post">
       <div class="form-group">
         <label for="marca">Marca:</label>
         <select class="form-control" id="marca" name="marca" form="form-veiculo">
@@ -89,13 +89,13 @@ pageEncoding="ISO-8859-1"%>
   var marca = document.getElementById("marca");
   marca.onchange = function (ev) {
     var idMarca = document.getElementById("marca").value;
-    window.location.href = "vender-seguro?marca=" + idMarca;
+    window.location.href = "vender-seguro?action=getVeiculo&marca=" + idMarca;
   };
 
   var modelo = document.getElementById("modelo");
   modelo.onchange = function (ev) {
     var idModelo = document.getElementById("modelo").value;
-    window.location.href = "vender-seguro?modelo=" + idModelo;
+    window.location.href = "vender-seguro?action=getVeiculo&modelo=" + idModelo;
   };
 </script>
 </body>

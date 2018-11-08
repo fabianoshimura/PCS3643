@@ -36,7 +36,7 @@
   <h1>Vender Seguro</h1>
   <h2>Preencha as informações do cliente</h2>
   <div class="content">
-    <form action="vender-seguro?step=1" method="post">
+    <form action="vender-seguro?action=setCliente" method="post">
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input class="form-control" type="text" id="nome" name="nome"/>

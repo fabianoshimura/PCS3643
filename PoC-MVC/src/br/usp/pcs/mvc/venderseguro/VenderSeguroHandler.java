@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public abstract class VenderSeguroHandler {
-    private HttpServletRequest request;
-    private HttpServletResponse response;
-    private Apolice apolice;
+    protected HttpServletRequest request;
+    protected HttpServletResponse response;
+    protected Apolice apolice;
 
 
 
