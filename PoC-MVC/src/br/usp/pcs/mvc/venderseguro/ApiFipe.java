@@ -21,6 +21,9 @@ public class ApiFipe {
   }
 
   public APIResponse[] getModelos(int codigoMarca) throws IOException {
+    if (codigoMarca == 0) {
+      return new APIResponse[0];
+    }
     parametros = new ParametrosModelos(codigoMarca);
     String response =  doPOSTRequest(parametros, "http://veiculos.fipe.org.br/api/veiculos/ConsultarModelos");
     String role = response.substring(response.indexOf(":") + 1, response.indexOf(",\"Anos\""));
@@ -28,12 +31,18 @@ public class ApiFipe {
   }
 
   public APIResponse[] getAnos(int codigoMarca, int codigoModelo) throws IOException {
+    if (codigoMarca == 0 || codigoModelo == 0) {
+      return new APIResponse[0];
+    }
     parametros = new ParametrosAno(codigoMarca, codigoModelo);
     String response =  doPOSTRequest(parametros, "http://veiculos.fipe.org.br/api/veiculos/ConsultarAnoModelo");
     return fromJSON(response);
   }
 
   public FinalAPIResponse getValor(int codigoMarca, int codigoModelo, String ano) throws IOException {
+    if (codigoMarca == 0 || codigoModelo == 0 || ano.length() == 0) {
+      return new FinalAPIResponse();
+    }
     parametros = new ParametrosValor(codigoMarca, codigoModelo, ano);
     String response = doPOSTRequest(parametros, "http://veiculos.fipe.org.br/api/veiculos/ConsultarValorComTodosParametros");
     Gson gson = new Gson();

@@ -87,6 +87,9 @@ pageEncoding="ISO-8859-1"%>
 </div>
 <script type="application/javascript">
   var marca = document.getElementById("marca");
+  if (marca.options.length === 1) {
+    window.location.href = "vender-seguro?action=getVeiculo";
+  }
   marca.onchange = function (ev) {
     var idMarca = document.getElementById("marca").value;
     window.location.href = "vender-seguro?action=getVeiculo&marca=" + idMarca;

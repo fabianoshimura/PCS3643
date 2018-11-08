@@ -1,9 +1,9 @@
 package br.usp.pcs.mvc.venderseguro;
 
 public class Veiculo {
-    int marca = 0;
-    int modelo = 0;
-    String ano = "";
+    private int marca = 0;
+    private int modelo = 0;
+    private String ano = "";
 
     public int getMarca() {
         return marca;
@@ -20,6 +20,9 @@ public class Veiculo {
     }
 
     public void setModelo(int modelo) {
+        if (marca == 0) {
+            throw new IllegalStateException();
+        }
         this.modelo = modelo;
         this.ano = "";
     }
@@ -29,6 +32,9 @@ public class Veiculo {
     }
 
     public void setAno(String ano) {
+        if (marca == 0 || modelo == 0) {
+            throw new IllegalStateException();
+        }
         this.ano = ano;
     }
 }
