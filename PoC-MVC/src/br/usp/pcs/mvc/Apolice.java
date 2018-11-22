@@ -1,8 +1,10 @@
 package br.usp.pcs.mvc;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class Apolice {
 
@@ -78,6 +80,9 @@ public class Apolice {
     private Boolean danosCorporais;
 
     public Double getValorAcessorios() {
+        if (valorAcessorios == null) {
+            return 0.0;
+        }
         return valorAcessorios;
     }
 
@@ -229,6 +234,14 @@ public class Apolice {
         this.status = status;
     }
 
+    public Double getValorFranquiaAcessorios() {
+        return valorFranquiaAcessorios;
+    }
+
+    public void setValorFranquiaAcessorios(Double valorFranquiaAcessorios) {
+        this.valorFranquiaAcessorios = valorFranquiaAcessorios;
+    }
+
     public void setDadosCliente(String nome, String email, String cpf, String endereco, String dataNascimento) throws ParseException {
         setNomeSegurado(nome);
         setEmail(email);
@@ -245,42 +258,90 @@ public class Apolice {
         setValorContratacao(Double.parseDouble(valorContratacao));
     }
 
+    public void calcularValores() {
+        calcularFranquias();
+        calcularPremio();
+    }
+
     private void calcularFranquias() {
-        valorFranquiaAcessorios = 0.15 * valorAcessorios;
+        valorFranquiaAcessorios = franquiaAcessorios ? 0.15 * valorAcessorios : 0;
 
-        Double multiplicador;
-
-        switch (tipoFranquiaCasco) {
-            case Majorada:
-                multiplicador = 0.8;
-                break;
-            case Reduzida:
-                multiplicador = 0.1;
-                break;
-            case Obrigatoria:
-                multiplicador = 0.06;
-                break;
-            default:
-                multiplicador = 1.0;
-        }
-
-        valorFranquiaCasco = multiplicador * valorContratacao;
+        valorFranquiaCasco = tipoFranquiaCasco.getMultiplyFranquiaCasco() * valorContratacao;
     }
 
     private void calcularPremio() {
+        Double premioCasco = tipoFranquiaCasco.getMultiplyPremioCasco() * valorContratacao;
+        if (getAge() < 25) {
+            premioCasco = premioCasco * (1 + tipoFranquiaCasco.getMultiplyAge());
+        }
 
+        Double premioAcessorios = franquiaAcessorios ? 0.005 * valorAcessorios : 0;
+
+        Double premioDanosMateriais = 0.0025 * 100000;
+
+        Double premioDanosCorporais = 0.0025 * 100000;
+
+        valorPremio = (premioCasco + premioAcessorios + premioDanosCorporais + premioDanosMateriais) * 1.0738;
+    }
+
+    private long getAge() {
+        long diferencaEmMilis = Math.abs(new Date().getTime() - dataNascimento.getTime());
+        long diferencaEmDias = TimeUnit.DAYS.convert(diferencaEmMilis, TimeUnit.MILLISECONDS);
+
+        return Math.abs(diferencaEmDias / 365);
+    }
+
+    public String getDataNascimentoString() {
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        return df.format(dataNascimento);
+    }
+
+    public String getCoberturasString() {
+        if (danosMateriais && danosCorporais) {
+            return "Danos Materiais, Danos Corporais";
+        }
+        if (danosMateriais) {
+            return "Danos Materiais";
+        }
+        if (danosCorporais) {
+            return "Danos Corporais";
+        }
+        return "Nenhum";
     }
 
     public enum TipoFranquiaCasco {
-        Majorada,
-        Obrigatoria,
-        Reduzida
+        Majorada(0.1, 0.02, 0.005),
+        Obrigatoria(0.08, 0.03, 0.01),
+        Reduzida(0.06, 0.05, 0.02);
+
+        private Double multiplyFranquiaCasco;
+        private Double multiplyPremioCasco;
+        private Double multiplyAge;
+
+        public Double getMultiplyFranquiaCasco() {
+            return multiplyFranquiaCasco;
+        }
+
+        public Double getMultiplyPremioCasco() {
+            return multiplyPremioCasco;
+        }
+
+        public Double getMultiplyAge() {
+            return multiplyAge;
+        }
+
+        TipoFranquiaCasco(Double multiplyFranquiaCasco,
+                          Double multiplyPremioCasco,
+                          Double multiplyAge) {
+            this.multiplyFranquiaCasco = multiplyFranquiaCasco;
+            this.multiplyPremioCasco = multiplyPremioCasco;
+            this.multiplyAge = multiplyAge;
+        }
     }
-}
 
-
-enum Status {
-    Ativa,
-    Encerrada,
-    Cancelada
+    public enum Status {
+        Ativa,
+        Encerrada,
+        Cancelada
+    }
 }

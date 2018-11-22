@@ -1,6 +1,7 @@
 package br.usp.pcs.mvc.venderseguro;
 
 import br.usp.pcs.mvc.Apolice;
+import br.usp.pcs.mvc.ApoliceDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,6 +18,7 @@ public class VenderSeguroController extends HttpServlet {
     Veiculo veiculo = new Veiculo();
     String currentUrl = "/vender-seguro-cliente.jsp";
     String urlToGo;
+    ApoliceDAO dao = new ApoliceDAO();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -53,14 +55,17 @@ public class VenderSeguroController extends HttpServlet {
                 break;
             case "setParametros":
                 handler = new SetParametrosHandler(request, response, apolice);
-                urlToGo = "/vender-seguro-parametros.jsp";
+                urlToGo = "/valores.jsp";
                 break;
+            case "salvarApolice":
+                dao.insertApolice(apolice);
             default:
                 goToInitialScreen(request, response);
                 return;
         }
 
         if (!handler.validateInputs()) {
+            request.setAttribute("error", true);
             handler.goToPage(getServletContext(), currentUrl);
             return;
         }
@@ -76,7 +81,6 @@ public class VenderSeguroController extends HttpServlet {
         requestDispatcher = getServletContext().getRequestDispatcher("/vender-seguro-cliente.jsp");
         requestDispatcher.forward(request, response);
     }
-
 }
 
 

@@ -2,8 +2,11 @@ package br.usp.pcs.mvc.venderseguro;
 
 import br.usp.pcs.mvc.Apolice;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class SetParametrosHandler extends VenderSeguroHandler {
     private String valorContratacao;
@@ -43,6 +46,8 @@ public class SetParametrosHandler extends VenderSeguroHandler {
         } else {
             apolice.setFranquiaAcessorios(false);
         }
+
+        apolice.calcularValores();
     }
 
     @Override
@@ -63,5 +68,11 @@ public class SetParametrosHandler extends VenderSeguroHandler {
         }
 
         return true;
+    }
+
+    @Override
+    void goToPage(ServletContext context, String url) throws ServletException, IOException {
+        request.setAttribute("apolice", apolice);
+        super.goToPage(context, url);
     }
 }

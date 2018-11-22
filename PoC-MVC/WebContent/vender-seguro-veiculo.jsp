@@ -40,8 +40,8 @@ pageEncoding="ISO-8859-1"%>
 </nav>
 <div class="center">
   <h1>Vender Seguro</h1>
-  <h2>Preencha os parâmetros da apólice:</h2>
   <div class="content">
+    <h2>Preencha as informações do veículo</h2>
     <form id="form-veiculo" action="vender-seguro?action=setVeiculo" method="post">
       <div class="form-group">
         <label for="marca">Marca:</label>

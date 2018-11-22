@@ -34,8 +34,8 @@ pageEncoding="ISO-8859-1"%>
 </nav>
 <div class="center">
   <h1>Vender Seguro</h1>
-  <h2>Preencha as informações do veículo</h2>
   <div class="content">
+    <h2>Preencha os parâmetros da apólice</h2>
     <form action="vender-seguro?action=setParametros" method="post">
       <div class="form-group row">
         <label for="valor" class="col-sm-4">Valor de Contratação:</label>
@@ -71,9 +71,9 @@ pageEncoding="ISO-8859-1"%>
           <div class="col-sm-8">
             <select class="form-control form-control-sm" name="franquia-casco" id="franquia-casco">
               <option></option>
-              <option>Majorada</option>
-              <option>Obrigatória</option>
-              <option>Reduzida</option>
+              <option value="Majorada">Majorada</option>
+              <option value="Obrigatoria">Obrigatória</option>
+              <option value="Reduzida">Reduzida</option>
             </select>
           </div>
         </div>

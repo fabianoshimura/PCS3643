@@ -24,7 +24,7 @@
         <a class="nav-link" href="vender-seguro">Vender</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Alterar Status</a>
+        <a class="nav-link" href="alterar-status">Alterar Status</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Gerar Relatório</a>
@@ -37,7 +37,7 @@
   <h2>Selecione o que deseja fazer:</h2>
   <div class="d-flex justify-content-between content">
     <a href="vender-seguro"><button class="btn btn-primary">Vender Seguro</button></a>
-    <a href="#"><button class="btn btn-primary">Alterar Status</button></a>
+    <a href="alterar-status"><button class="btn btn-primary">Alterar Status</button></a>
     <a href="#"><button class="btn btn-primary">Gerar Relatório</button></a>
   </div>
 </div>

@@ -34,8 +34,8 @@
 </nav>
 <div class="center">
   <h1>Vender Seguro</h1>
-  <h2>Preencha as informações do cliente</h2>
   <div class="content">
+    <h2>Preencha as informações do cliente</h2>
     <form action="vender-seguro?action=setCliente" method="post">
       <div class="form-group">
         <label for="nome">Nome:</label>
