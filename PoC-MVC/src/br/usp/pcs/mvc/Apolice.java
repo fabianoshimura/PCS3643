@@ -1,17 +1,29 @@
 package br.usp.pcs.mvc;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Apolice {
 
-    public Apolice(String marcaVeiculo, String modeloVeiculo, int anoVeiculo, Double valorContratacao, TipoFranquiaCasco tipoFranquiaCasco, Boolean franquiaAcessorios, Double valorFranquia, Double valorPremio, Double valorSegurado, int numeroApolice, String nomeSegurado, String CPF, String email, String endereco, Date dataNascimento, Status status) {
+    public Apolice() {
+
+    }
+
+    public Apolice(String marcaVeiculo, String modeloVeiculo, int anoVeiculo, Double valorContratacao,
+                   TipoFranquiaCasco tipoFranquiaCasco, Boolean franquiaAcessorios, Double valorAcessorios, Double valorFranquiaCasco, Double valorFranquiaAcessorios,
+                   Double valorPremio, Double valorSegurado, int numeroApolice, String nomeSegurado,
+                   String CPF, String email, String endereco, Date dataNascimento, Status status,
+                   Boolean danosMateriais, Boolean danosCorporais) {
         this.marcaVeiculo = marcaVeiculo;
         this.modeloVeiculo = modeloVeiculo;
         this.anoVeiculo = anoVeiculo;
         this.valorContratacao = valorContratacao;
         this.tipoFranquiaCasco = tipoFranquiaCasco;
         this.franquiaAcessorios = franquiaAcessorios;
-        this.valorFranquia = valorFranquia;
+        this.valorAcessorios = valorAcessorios;
+        this.valorFranquiaCasco = valorFranquiaCasco;
+        this.valorFranquiaAcessorios = valorFranquiaAcessorios;
         this.valorPremio = valorPremio;
         this.valorSegurado = valorSegurado;
         this.numeroApolice = numeroApolice;
@@ -21,6 +33,8 @@ public class Apolice {
         this.endereco = endereco;
         this.dataNascimento = dataNascimento;
         this.status = status;
+        this.danosMateriais = danosMateriais;
+        this.danosCorporais = danosCorporais;
     }
 
     private String marcaVeiculo;
@@ -35,7 +49,11 @@ public class Apolice {
 
     private Boolean franquiaAcessorios;
 
-    private Double valorFranquia;
+    private Double valorAcessorios;
+
+    private Double valorFranquiaCasco;
+
+    private Double valorFranquiaAcessorios;
 
     private Double valorPremio;
 
@@ -54,6 +72,34 @@ public class Apolice {
     private Date dataNascimento;
 
     private Status status;
+
+    private Boolean danosMateriais;
+
+    private Boolean danosCorporais;
+
+    public Double getValorAcessorios() {
+        return valorAcessorios;
+    }
+
+    public void setValorAcessorios(Double valorAcessorios) {
+        this.valorAcessorios = valorAcessorios;
+    }
+
+    public Boolean getDanosMateriais() {
+        return danosMateriais;
+    }
+
+    public void setDanosMateriais(Boolean danosMateriais) {
+        this.danosMateriais = danosMateriais;
+    }
+
+    public Boolean getDanosCorporais() {
+        return danosCorporais;
+    }
+
+    public void setDanosCorporais(Boolean danosCorporais) {
+        this.danosCorporais = danosCorporais;
+    }
 
     public String getMarcaVeiculo() {
         return marcaVeiculo;
@@ -103,12 +149,12 @@ public class Apolice {
         this.franquiaAcessorios = franquiaAcessorios;
     }
 
-    public Double getValorFranquia() {
-        return valorFranquia;
+    public Double getValorFranquiaCasco() {
+        return valorFranquiaCasco;
     }
 
-    public void setValorFranquia(Double valorFranquia) {
-        this.valorFranquia = valorFranquia;
+    public void setValorFranquiaCasco(Double valorFranquiaCasco) {
+        this.valorFranquiaCasco = valorFranquiaCasco;
     }
 
     public Double getValorPremio() {
@@ -183,14 +229,55 @@ public class Apolice {
         this.status = status;
     }
 
+    public void setDadosCliente(String nome, String email, String cpf, String endereco, String dataNascimento) throws ParseException {
+        setNomeSegurado(nome);
+        setEmail(email);
+        setCPF(cpf);
+        setEndereco(endereco);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        setDataNascimento(format.parse(dataNascimento));
+    }
 
+    public void setDadosVeiculo(String marcaVeiculo, String modeloVeiculo, String anoVeiculo, String valorContratacao) {
+        setMarcaVeiculo(marcaVeiculo);
+        setModeloVeiculo(modeloVeiculo);
+        setAnoVeiculo(Integer.parseInt(anoVeiculo));
+        setValorContratacao(Double.parseDouble(valorContratacao));
+    }
+
+    private void calcularFranquias() {
+        valorFranquiaAcessorios = 0.15 * valorAcessorios;
+
+        Double multiplicador;
+
+        switch (tipoFranquiaCasco) {
+            case Majorada:
+                multiplicador = 0.8;
+                break;
+            case Reduzida:
+                multiplicador = 0.1;
+                break;
+            case Obrigatoria:
+                multiplicador = 0.06;
+                break;
+            default:
+                multiplicador = 1.0;
+        }
+
+        valorFranquiaCasco = multiplicador * valorContratacao;
+    }
+
+    private void calcularPremio() {
+
+    }
+
+    public enum TipoFranquiaCasco {
+        Majorada,
+        Obrigatoria,
+        Reduzida
+    }
 }
 
-enum TipoFranquiaCasco {
-    Majorada,
-    Obrigatoria,
-    Reduzida
-}
 
 enum Status {
     Ativa,
