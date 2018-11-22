@@ -3,6 +3,8 @@ package br.usp.pcs.mvc.venderseguro;
 import br.usp.pcs.mvc.Apolice;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -36,5 +38,12 @@ public class SetVeiculoHandler extends VenderSeguroHandler {
         marca = Integer.parseInt(request.getParameter("marca"));
 
         return ano.length() > 0 && modelo > 0 && marca > 0;
+    }
+
+    @Override
+    void goToPage(ServletContext context, String url) throws ServletException, IOException {
+        request.setAttribute("valorFIPE", apolice.getValorContratacao());
+
+        super.goToPage(context, url);
     }
 }

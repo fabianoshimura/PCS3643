@@ -46,3 +46,7 @@ label {
 .nav-link, .navbar-brand {
     color: aliceblue !important;
 }
+
+.hidden {
+    display: none;
+}

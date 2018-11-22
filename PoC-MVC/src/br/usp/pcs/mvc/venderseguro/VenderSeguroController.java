@@ -15,6 +15,8 @@ public class VenderSeguroController extends HttpServlet {
 
     Apolice apolice = new Apolice();
     Veiculo veiculo = new Veiculo();
+    String currentUrl = "/vender-seguro-cliente.jsp";
+    String urlToGo;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -28,7 +30,6 @@ public class VenderSeguroController extends HttpServlet {
 
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         VenderSeguroHandler handler;
-        String urlToGo;
 
         String action = request.getParameter("action");
 
@@ -44,22 +45,28 @@ public class VenderSeguroController extends HttpServlet {
                 break;
             case "setVeiculo":
                 handler = new SetVeiculoHandler(request, response, apolice);
-                urlToGo = "/vender-seguro-parametro.jsp";
+                urlToGo = "/vender-seguro-parametros.jsp";
                 break;
             case "getVeiculo":
                 handler = new GetVeiculoInfoHandler(request, response, apolice, veiculo);
                 urlToGo = "/vender-seguro-veiculo.jsp";
+                break;
+            case "setParametros":
+                handler = new SetParametrosHandler(request, response, apolice);
+                urlToGo = "/vender-seguro-parametros.jsp";
                 break;
             default:
                 goToInitialScreen(request, response);
                 return;
         }
 
-        if(!handler.validateInputs()) {
-            handler.goToPage(getServletContext(), request.getRequestURI());
+        if (!handler.validateInputs()) {
+            handler.goToPage(getServletContext(), currentUrl);
+            return;
         }
 
         handler.execute();
+        currentUrl = urlToGo;
         handler.goToPage(getServletContext(), urlToGo);
     }
 

@@ -106,12 +106,12 @@ class ApoliceDAO {
         try {
             return new Apolice(res.getString("marcaVeiculo"), res.getString("modeloVeiculo"),
                     res.getInt("anoVeiculo"), res.getDouble("valorContratacao"),
-                    TipoFranquiaCasco.valueOf(res.getString("tipoFranquiaCasco")),
-                    res.getBoolean("franquiaAcessorios"), res.getDouble("valorFranquia"),
+                    Apolice.TipoFranquiaCasco.valueOf(res.getString("tipoFranquiaCasco")),
+                    res.getBoolean("franquiaAcessorios"), null, res.getDouble("valorFranquia"), null,
                     res.getDouble("valorPremio"), res.getDouble("valorSegurado"),
                     res.getInt("numeroApolice"), res.getString("nomeSegurado"),
                     res.getString("CPF"), res.getString("email"), res.getString("endereco"),
-                    res.getDate("dataNascimento"), Status.valueOf(res.getString("status")));
+                    res.getDate("dataNascimento"), Status.valueOf(res.getString("status")), true, true);
 
         } catch (SQLException e) {
             e.printStackTrace();
