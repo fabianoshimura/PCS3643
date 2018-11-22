@@ -64,6 +64,18 @@
             <children xsi:type="notation:Shape" xmi:id="_OyW10N4FEei5feIrL9oy-A" type="Column" element="_OyVnsN4FEei5feIrL9oy-A" fontName="Segoe UI">
               <layoutConstraint xsi:type="notation:Bounds" xmi:id="_OyW10d4FEei5feIrL9oy-A"/>
             </children>
+            <children xsi:type="notation:Shape" xmi:id="_uLGRAO5xEei-A_jToGdxCA" type="Column" element="_uKt2gO5xEei-A_jToGdxCA" fontName="Segoe UI">
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_uLGRAe5xEei-A_jToGdxCA"/>
+            </children>
+            <children xsi:type="notation:Shape" xmi:id="_xfn80O5xEei-A_jToGdxCA" type="Column" element="_xfnVwO5xEei-A_jToGdxCA" fontName="Segoe UI">
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_xfn80e5xEei-A_jToGdxCA"/>
+            </children>
+            <children xsi:type="notation:Shape" xmi:id="_0gP1MO5xEei-A_jToGdxCA" type="Column" element="_0gPOIO5xEei-A_jToGdxCA" fontName="Segoe UI">
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_0gP1Me5xEei-A_jToGdxCA"/>
+            </children>
+            <children xsi:type="notation:Shape" xmi:id="_2UhPMO5xEei-A_jToGdxCA" type="Column" element="_2UgoIO5xEei-A_jToGdxCA" fontName="Segoe UI">
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_2UhPMe5xEei-A_jToGdxCA"/>
+            </children>
             <styles xsi:type="datanotation:DataListCompartmentStyle" xmi:id="_h9TIE94CEei5feIrL9oy-A" sortingKeys="Natural:Ascending"/>
           </children>
           <children xmi:id="_h9TIFN4CEei5feIrL9oy-A" visible="false" type="Index.Compartment">
@@ -91,13 +103,13 @@
   </SQLSchema:Schema>
   <SQLTables:PersistentTable xmi:id="_h82cIN4CEei5feIrL9oy-A" name="Apolice" description="Eh a unica classe que temos em nosso projeto." schema="_fbockN4CEei5feIrL9oy-A">
     <columns xmi:id="_-FeBwN4EEei5feIrL9oy-A" name="nomeSegurado" nullable="false">
-      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_-FeBwd4EEei5feIrL9oy-A" name="CHAR" length="5"/>
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_-FeBwd4EEei5feIrL9oy-A" name="CHAR" length="50"/>
     </columns>
     <columns xmi:id="_At6qsN4FEei5feIrL9oy-A" name="marcaVeiculo">
-      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_At7RwN4FEei5feIrL9oy-A" name="CHAR" length="5"/>
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_At7RwN4FEei5feIrL9oy-A" name="CHAR" length="50"/>
     </columns>
     <columns xmi:id="_BhutQN4FEei5feIrL9oy-A" name="modeloVeiculo">
-      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_BhutQd4FEei5feIrL9oy-A" name="CHAR" length="5"/>
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_BhutQd4FEei5feIrL9oy-A" name="CHAR" length="50"/>
     </columns>
     <columns xmi:id="_CWX2QN4FEei5feIrL9oy-A" name="anoVeiculo">
       <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_e9b9UN4FEei5feIrL9oy-A" name="INT" primitiveType="INTEGER"/>
@@ -106,15 +118,15 @@
       <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_gl9aUN4FEei5feIrL9oy-A" name="INT" primitiveType="INTEGER"/>
     </columns>
     <columns xmi:id="_D4eiMN4FEei5feIrL9oy-A" name="tiposCobertura">
-      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_D4eiMd4FEei5feIrL9oy-A" name="CHAR" length="5"/>
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_D4eiMd4FEei5feIrL9oy-A" name="CHAR" length="50"/>
     </columns>
     <columns xmi:id="_EukcsN4FEei5feIrL9oy-A" name="tipoFranquiaCasco">
-      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_EulDwN4FEei5feIrL9oy-A" name="CHAR" length="5"/>
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_EulDwN4FEei5feIrL9oy-A" name="CHAR" length="50"/>
     </columns>
     <columns xmi:id="_GC9cwN4FEei5feIrL9oy-A" name="franquiaAcessorios">
       <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_6wrkUN4REei5feIrL9oy-A" name="BIT" primitiveType="SMALLINT"/>
     </columns>
-    <columns xmi:id="_G5zlMN4FEei5feIrL9oy-A" name="valorFranquia">
+    <columns xmi:id="_G5zlMN4FEei5feIrL9oy-A" name="valorFranquiaCasco">
       <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_SFlEoN4GEei5feIrL9oy-A" name="INT" primitiveType="INTEGER"/>
     </columns>
     <columns xmi:id="_H2FAMN4FEei5feIrL9oy-A" name="valorPremio">
@@ -130,16 +142,28 @@
       <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_JoKzcN4GEei5feIrL9oy-A" name="INT" primitiveType="INTEGER"/>
     </columns>
     <columns xmi:id="_MIlXMN4FEei5feIrL9oy-A" name="email">
-      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_MIlXMd4FEei5feIrL9oy-A" name="CHAR" length="5"/>
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_MIlXMd4FEei5feIrL9oy-A" name="CHAR" length="50"/>
     </columns>
     <columns xmi:id="_NDBmMN4FEei5feIrL9oy-A" name="endereco">
-      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_NDBmMd4FEei5feIrL9oy-A" name="CHAR" length="5"/>
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_NDBmMd4FEei5feIrL9oy-A" name="CHAR" length="50"/>
     </columns>
     <columns xmi:id="_Nr6LIN4FEei5feIrL9oy-A" name="dataNascimento">
       <containedType xsi:type="SQLDataTypes:DateDataType" xmi:id="_KyG3AN4GEei5feIrL9oy-A" name="DATE" primitiveType="DATE"/>
     </columns>
     <columns xmi:id="_OyVnsN4FEei5feIrL9oy-A" name="status">
-      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_OyVnsd4FEei5feIrL9oy-A" name="CHAR" length="5"/>
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_OyVnsd4FEei5feIrL9oy-A" name="CHAR" length="50"/>
+    </columns>
+    <columns xmi:id="_uKt2gO5xEei-A_jToGdxCA" name="valorAcessorios">
+      <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_weoZ4O5xEei-A_jToGdxCA" name="INT" primitiveType="INTEGER"/>
+    </columns>
+    <columns xmi:id="_xfnVwO5xEei-A_jToGdxCA" name="valorFranquiaAcessorios">
+      <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_zUd-kO5xEei-A_jToGdxCA" name="INT" primitiveType="INTEGER"/>
+    </columns>
+    <columns xmi:id="_0gPOIO5xEei-A_jToGdxCA" name="danosMateriais">
+      <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_1s8R0O5xEei-A_jToGdxCA" name="BIT" primitiveType="SMALLINT"/>
+    </columns>
+    <columns xmi:id="_2UgoIO5xEei-A_jToGdxCA" name="danosCorporais">
+      <containedType xsi:type="SQLDataTypes:IntegerDataType" xmi:id="_3cj1UO5xEei-A_jToGdxCA" name="BIT" primitiveType="SMALLINT"/>
     </columns>
     <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_D7FB4N4TEei5feIrL9oy-A" name="Apolice_PK" members="_r_tBIN4CEei5feIrL9oy-A"/>
   </SQLTables:PersistentTable>
