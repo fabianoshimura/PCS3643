@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 public class ApoliceDAO {
@@ -35,7 +36,7 @@ public class ApoliceDAO {
         }
     }
 			
-    public Apolice getApolice(int numeroApolice) {
+    public Apolice getApolice(int numeroApolice) throws SQLException{
         String query = "SELECT * FROM Apolice WHERE numeroApolice = ?";
 
         PreparedStatement statement = null;
@@ -49,9 +50,7 @@ public class ApoliceDAO {
             result.first();
             return apoliceFromResult(result);
         } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Query failed");
-            throw new RuntimeException(e);
+            throw e;
         } finally {
             try {
                 result.close();
@@ -68,7 +67,7 @@ public class ApoliceDAO {
         }
     }
 
-    public boolean setStatus(int numeroApolice, Apolice.Status status) {
+    public Apolice setStatus(int numeroApolice, Apolice.Status status) {
         String query = "UPDATE Apolice SET status = ? WHERE numeroApolice = ?";
 
         PreparedStatement statement = null;
@@ -79,7 +78,7 @@ public class ApoliceDAO {
             statement.setString(1, status.toString());
             statement.setInt(2, numeroApolice);
             statement.execute();
-            return true;
+            return getApolice(numeroApolice);
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Query failed");
@@ -131,12 +130,34 @@ public class ApoliceDAO {
         }
     }
 
+    public List<Apolice> getApolicesPorData(Date inicio, Date fim) throws SQLException {
+        List<Apolice> ListaDeApolicePorMes = new ArrayList<Apolice>();
+
+
+        Connection connection = getConnection();
+        String query = "SELECT * FROM Apolice WHERE dataInicio BETWEEN ? AND ?";
+        PreparedStatement prepared = connection.prepareStatement(query);
+        prepared.setDate(1, new java.sql.Date(inicio.getTime()));
+        prepared.setDate(2, new java.sql.Date(fim.getTime()));
+        ResultSet result = prepared.executeQuery();
+        while(result.next())
+        {
+            ListaDeApolicePorMes.add(this.apoliceFromResult(result));
+        }
+        connection.close();
+
+
+        return ListaDeApolicePorMes;
+
+
+    }
+
     public int insertApolice(Apolice apolice) {
         final String query = "INSERT INTO Apolice (nomeSegurado, marcaVeiculo, modeloVeiculo, " +
                 "anoVeiculo, valorContratacao, tiposCobertura, tipoFranquiaCasco, franquiaAcessorios, " +
                 "valorFranquiaCasco, valorPremio, CPF, email, endereco, dataNascimento, " +
-                "status, valorAcessorios, valorFranquiaAcessorios, danosMateriais, danosCorporais, createdAt) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                "status, valorAcessorios, valorFranquiaAcessorios, danosMateriais, danosCorporais, createdAt, dataInicio, dataVencimento) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         final String queryID = "SELECT LAST_INSERT_ID();";
         PreparedStatement statement = null;
         ResultSet result = null;
@@ -166,6 +187,8 @@ public class ApoliceDAO {
             statement.setBoolean(18, apolice.getDanosMateriais());
             statement.setBoolean(19, apolice.getDanosCorporais());
             statement.setDate(20, new java.sql.Date(new Date().getTime()));
+            statement.setDate(21, new java.sql.Date(apolice.getDataInicio().getTime()));
+            statement.setDate(22, new java.sql.Date(apolice.getDataVencimento().getTime()));
             statement.execute();
             try {
                 statement.close();
@@ -193,22 +216,17 @@ public class ApoliceDAO {
         return idApolice;
     }
 
-    private Apolice apoliceFromResult(ResultSet res) {
-        try {
-            return new Apolice(res.getString("marcaVeiculo"), res.getString("modeloVeiculo"),
-                    res.getInt("anoVeiculo"), res.getDouble("valorContratacao"),
-                    Apolice.TipoFranquiaCasco.valueOf(res.getString("tipoFranquiaCasco")),
-                    res.getBoolean("franquiaAcessorios"), res.getDouble("valorAcessorios"), res.getDouble("valorFranquiaCasco"), res.getDouble("valorFranquiaAcessorios"),
-                    res.getDouble("valorPremio"), res.getDouble("valorSegurado"),
-                    res.getInt("numeroApolice"), res.getString("nomeSegurado"),
-                    res.getString("CPF"), res.getString("email"), res.getString("endereco"),
-                    res.getDate("dataNascimento"), Apolice.Status.valueOf(res.getString("status")), res.getBoolean("danosMateriais"), res.getBoolean("danosCorporais"));
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-
+    private Apolice apoliceFromResult(ResultSet res) throws SQLException {
+        return new Apolice(res.getString("marcaVeiculo"), res.getString("modeloVeiculo"),
+                res.getInt("anoVeiculo"), res.getDouble("valorContratacao"),
+                Apolice.TipoFranquiaCasco.valueOf(res.getString("tipoFranquiaCasco")),
+                res.getBoolean("franquiaAcessorios"), res.getDouble("valorAcessorios"), res.getDouble("valorFranquiaCasco"), res.getDouble("valorFranquiaAcessorios"),
+                res.getDouble("valorPremio"), res.getDouble("valorSegurado"),
+                res.getInt("numeroApolice"), res.getString("nomeSegurado"),
+                res.getString("CPF"), res.getString("email"), res.getString("endereco"),
+                res.getDate("dataNascimento"), Apolice.Status.valueOf(res.getString("status")),
+                res.getBoolean("danosMateriais"), res.getBoolean("danosCorporais"),
+                res.getDate("dataInicio"), res.getDate("dataVencimento"));
     }
 
 }

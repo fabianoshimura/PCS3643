@@ -32,6 +32,7 @@ public class VenderSeguroController extends HttpServlet {
 
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         VenderSeguroHandler handler;
+        request.setAttribute("error", false);
 
         String action = request.getParameter("action");
 
@@ -58,7 +59,10 @@ public class VenderSeguroController extends HttpServlet {
                 urlToGo = "/valores.jsp";
                 break;
             case "salvarApolice":
-                dao.insertApolice(apolice);
+                int numApolice = dao.insertApolice(apolice);
+                request.setAttribute("numApolice", numApolice);
+                goToIndex(request, response);
+                return;
             default:
                 goToInitialScreen(request, response);
                 return;
@@ -79,6 +83,13 @@ public class VenderSeguroController extends HttpServlet {
         RequestDispatcher requestDispatcher;
 
         requestDispatcher = getServletContext().getRequestDispatcher("/vender-seguro-cliente.jsp");
+        requestDispatcher.forward(request, response);
+    }
+
+    private void goToIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher requestDispatcher;
+
+        requestDispatcher = getServletContext().getRequestDispatcher("/index.jsp");
         requestDispatcher.forward(request, response);
     }
 }

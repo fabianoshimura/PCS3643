@@ -11,6 +11,9 @@
 </head>
 <body>
 <%Apolice apolice = (Apolice) request.getAttribute("apolice");%>
+<%boolean error = (boolean) request.getAttribute("error");%>
+<%boolean success = (boolean) request.getAttribute("success");%>
+<%boolean queryError = (boolean) request.getAttribute("queryError");%>
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="index.jsp">Sistema de Seguros</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,12 +49,19 @@
     <%if(apolice != null) {%>
         <h2>Informações da Apólice</h2>
         <div class="info">
+            <h3>Informações Gerais:</h3>
+            <p><strong>Corretora de Seguros:</strong> PF - Shimura & Darvas Ltda.</p>
+            <p><strong>Nome do Corretor:</strong> Pedro Darvas</p>
+            <p><strong>Data de Inicio:</strong> <%=apolice.getDataString(apolice.getDataInicio())%></p>
+            <p><strong>Data de Vencimento:</strong> <%=apolice.getDataString(apolice.getDataVencimento())%></p>
+        </div>
+        <div class="info">
             <h3>Informações do Cliente:</h3>
             <p><strong>Nome: </strong><%=apolice.getNomeSegurado()%></p>
             <p><strong>E-mail: </strong><%=apolice.getEmail()%></p>
             <p><strong>CPF: </strong><%=apolice.getCPF()%></p>
             <p><strong>Endereço: </strong><%=apolice.getEndereco()%></p>
-            <p><strong>Data de Nascimento: </strong><%=apolice.getDataNascimentoString()%></p>
+            <p><strong>Data de Nascimento: </strong><%=apolice.getDataString(apolice.getDataNascimento())%></p>
         </div>
         <div class="info">
             <h3>Informações do Veículo:</h3>
@@ -73,6 +83,8 @@
             <h3>Valores Calculados:</h3>
             <p><strong>Franquia Casco: </strong>R$ <%=String.format("%.2f", apolice.getValorFranquiaCasco())%></p>
             <p><strong>Franquia Acessorios: </strong>R$ <%=String.format("%.2f", apolice.getValorFranquiaAcessorios())%></p>
+            <p><strong>Prêmio Líquido: </strong>R$ <%=String.format("%.2f", apolice.getValorPremioSemImposto())%></p>
+            <p><strong>Imposto Calculado (IOF): </strong>R$ <%=String.format("%.2f", apolice.getImpostoPremio())%></p>
             <p><strong>Prêmio Total: </strong>R$ <%=String.format("%.2f", apolice.getValorPremio())%></p>
         </div>
         <form action="alterar-status" method="post" id="form-status">
@@ -87,12 +99,31 @@
                             <%}%>><%=status.toString()%></option>
                     <%}%>
                 </select>
+                <br>
                 <button class="btn btn-primary">Alterar Status</button>
             </div>
         </form>
 
         <%}%>
     </div>
+
+    <%if(error) {%>
+    <div class="snackbar error">
+        <p>Este status é inválido!</p>
+    </div>
+    <%}%>
+
+    <%if(success) {%>
+    <div class="snackbar success">
+        <p>Status alterado com sucesso!</p>
+    </div>
+    <%}%>
+    <%if(queryError) {%>
+    <div class="snackbar error">
+        <p>Apólice não encontrada!</p>
+    </div>
+    <%}%>
+
 </div>
 </body>
 </html>

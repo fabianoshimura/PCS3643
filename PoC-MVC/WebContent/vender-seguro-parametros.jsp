@@ -10,6 +10,7 @@ pageEncoding="ISO-8859-1"%>
 </head>
 <body>
 <%Double valorFIPE = (Double) request.getAttribute("valorFIPE");%>
+<%boolean error = (boolean) request.getAttribute("error");%>
 <nav class="navbar navbar-expand-lg navbar-light ">
   <a class="navbar-brand" href="#">Sistema de Seguros</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,6 +98,11 @@ pageEncoding="ISO-8859-1"%>
       </div>
     </form>
   </div>
+  <%if(error) {%>
+  <div class="snackbar error">
+    <p>Preencha todos os parâmetros corretamente para prosseguir!</p>
+  </div>
+  <%}%>
 </div>
 <script type="application/javascript">
   var valor = document.getElementById("valor");

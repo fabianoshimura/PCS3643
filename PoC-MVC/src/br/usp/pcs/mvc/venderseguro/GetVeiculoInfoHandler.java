@@ -67,6 +67,6 @@ public class GetVeiculoInfoHandler extends VenderSeguroHandler {
 
         request.setAttribute("veiculo", veiculo);
 
-        context.getRequestDispatcher(url).forward(request, response);
+        super.goToPage(context, url);
     }
 }

@@ -37,7 +37,7 @@ public class SetClienteHandler extends VenderSeguroHandler {
         endereco = request.getParameter("endereco");
         data = request.getParameter("data");
 
-        return nome != null && email != null && cpf != null && endereco != null && data != null;
+        return nome.length() > 0 && email.length() > 0 && cpf.length() > 0 && endereco.length() > 0 && data.length() > 0;
     }
 
     @Override
@@ -48,6 +48,6 @@ public class SetClienteHandler extends VenderSeguroHandler {
 
         request.setAttribute("veiculo", new Veiculo());
 
-        context.getRequestDispatcher(url).forward(request, response);
+        super.goToPage(context, url);
     }
 }

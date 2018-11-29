@@ -38,12 +38,19 @@
   <div class="content">
     <h2>Informações da Apólice:</h2>
     <div class="info">
+      <h3>Informações Gerais:</h3>
+      <p><strong>Corretora de Seguros:</strong> PF - Shimura & Darvas Ltda.</p>
+      <p><strong>Nome do Corretor:</strong> Pedro Darvas</p>
+      <p><strong>Data de Inicio:</strong> <%=apolice.getDataString(apolice.getDataInicio())%></p>
+      <p><strong>Data de Vencimento:</strong> <%=apolice.getDataString(apolice.getDataVencimento())%></p>
+    </div>
+    <div class="info">
       <h3>Informações do Cliente:</h3>
       <p><strong>Nome: </strong><%=apolice.getNomeSegurado()%></p>
       <p><strong>E-mail: </strong><%=apolice.getEmail()%></p>
       <p><strong>CPF: </strong><%=apolice.getCPF()%></p>
       <p><strong>Endereço: </strong><%=apolice.getEndereco()%></p>
-      <p><strong>Data de Nascimento: </strong><%=apolice.getDataNascimentoString()%></p>
+      <p><strong>Data de Nascimento: </strong><%=apolice.getDataString(apolice.getDataNascimento())%></p>
     </div>
     <div class="info">
       <h3>Informações do Veículo:</h3>
@@ -65,6 +72,8 @@
       <h3>Valores Calculados:</h3>
       <p><strong>Franquia Casco: </strong>R$ <%=String.format("%.2f", apolice.getValorFranquiaCasco())%></p>
       <p><strong>Franquia Acessorios: </strong>R$ <%=String.format("%.2f", apolice.getValorFranquiaAcessorios())%></p>
+      <p><strong>Prêmio Líquido: </strong>R$ <%=String.format("%.2f", apolice.getValorPremioSemImposto())%></p>
+      <p><strong>Imposto Calculado (IOF): </strong>R$ <%=String.format("%.2f", apolice.getImpostoPremio())%></p>
       <p><strong>Prêmio Total: </strong>R$ <%=String.format("%.2f", apolice.getValorPremio())%></p>
     </div>
     <div class="d-flex flex-row-reverse d-flex justify-content-between">

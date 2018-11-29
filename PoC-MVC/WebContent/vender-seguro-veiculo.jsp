@@ -16,6 +16,7 @@ pageEncoding="ISO-8859-1"%>
 <%APIResponse[] modelos = (APIResponse[]) request.getAttribute("modelos");%>
 <%APIResponse[] anos = (APIResponse[]) request.getAttribute("anos");%>
 <%Veiculo veiculo = (Veiculo) request.getAttribute("veiculo");%>
+<%boolean error = (boolean) request.getAttribute("error");%>
 <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="index.jsp">Sistema de Seguros</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,6 +85,11 @@ pageEncoding="ISO-8859-1"%>
       </div>
     </form>
   </div>
+  <%if(error) {%>
+  <div class="snackbar error">
+    <p>Preencha todos os parâmetros corretamente para prosseguir!</p>
+  </div>
+  <%}%>
 </div>
 <script type="application/javascript">
   var marca = document.getElementById("marca");

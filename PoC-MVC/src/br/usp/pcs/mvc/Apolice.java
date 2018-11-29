@@ -8,15 +8,19 @@ import java.util.concurrent.TimeUnit;
 
 public class Apolice {
 
-    public Apolice() {
+    private final long ONE_YEAR_IN_SECONDS = 31556926;
+    private final long ONE_DAY_IN_SECONDS = 86400;
 
+    public Apolice() {
+        this.dataInicio = new Date();
+        this.dataVencimento = new Date(dataInicio.getTime() + (ONE_YEAR_IN_SECONDS - ONE_DAY_IN_SECONDS) * 1000);
     }
 
     public Apolice(String marcaVeiculo, String modeloVeiculo, int anoVeiculo, Double valorContratacao,
                    TipoFranquiaCasco tipoFranquiaCasco, Boolean franquiaAcessorios, Double valorAcessorios, Double valorFranquiaCasco, Double valorFranquiaAcessorios,
                    Double valorPremio, Double valorSegurado, int numeroApolice, String nomeSegurado,
                    String CPF, String email, String endereco, Date dataNascimento, Status status,
-                   Boolean danosMateriais, Boolean danosCorporais) {
+                   Boolean danosMateriais, Boolean danosCorporais, Date dataInicio, Date dataVencimento) {
         this.marcaVeiculo = marcaVeiculo;
         this.modeloVeiculo = modeloVeiculo;
         this.anoVeiculo = anoVeiculo;
@@ -37,6 +41,9 @@ public class Apolice {
         this.status = status;
         this.danosMateriais = danosMateriais;
         this.danosCorporais = danosCorporais;
+        this.dataInicio = dataInicio;
+        this.dataVencimento = dataVencimento;
+        calcularPremioEImposto();
     }
 
     private String marcaVeiculo;
@@ -59,6 +66,18 @@ public class Apolice {
 
     private Double valorPremio;
 
+    private Double valorPremioSemImposto;
+
+    public Double getValorPremioSemImposto() {
+        return valorPremioSemImposto;
+    }
+
+    public Double getImpostoPremio() {
+        return impostoPremio;
+    }
+
+    private Double impostoPremio;
+
     private Double valorSegurado;
 
     private int numeroApolice;
@@ -78,6 +97,18 @@ public class Apolice {
     private Boolean danosMateriais;
 
     private Boolean danosCorporais;
+
+    public Date getDataInicio() {
+        return dataInicio;
+    }
+
+    public Date getDataVencimento() {
+        return dataVencimento;
+    }
+
+    private Date dataInicio;
+
+    private Date dataVencimento;
 
     public Double getValorAcessorios() {
         if (valorAcessorios == null) {
@@ -281,7 +312,14 @@ public class Apolice {
 
         Double premioDanosCorporais = 0.0025 * 100000;
 
-        valorPremio = (premioCasco + premioAcessorios + premioDanosCorporais + premioDanosMateriais) * 1.0738;
+        valorPremioSemImposto = (premioCasco + premioAcessorios + premioDanosCorporais + premioDanosMateriais);
+        impostoPremio = valorPremioSemImposto * 0.0738;
+        valorPremio = valorPremioSemImposto + impostoPremio;
+    }
+
+    private void calcularPremioEImposto() {
+        valorPremioSemImposto = valorPremio / 1.0738;
+        impostoPremio = valorPremio - valorPremioSemImposto;
     }
 
     private long getAge() {
@@ -291,9 +329,9 @@ public class Apolice {
         return Math.abs(diferencaEmDias / 365);
     }
 
-    public String getDataNascimentoString() {
+    public String getDataString(Date data) {
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        return df.format(dataNascimento);
+        return df.format(data);
     }
 
     public String getCoberturasString() {

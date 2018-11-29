@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%Integer numApolice = (Integer) request.getAttribute("numApolice");%>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -27,7 +28,7 @@
         <a class="nav-link" href="alterar-status">Alterar Status</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Gerar Relatório</a>
+        <a class="nav-link" href="gerar-relatorio">Gerar Relatório</a>
       </li>
     </ul>
   </div>
@@ -38,8 +39,13 @@
   <div class="d-flex justify-content-between content">
     <a href="vender-seguro"><button class="btn btn-primary">Vender Seguro</button></a>
     <a href="alterar-status"><button class="btn btn-primary">Alterar Status</button></a>
-    <a href="#"><button class="btn btn-primary">Gerar Relatório</button></a>
+    <a href="gerar-relatorio"><button class="btn btn-primary">Gerar Relatório</button></a>
   </div>
+  <%if (numApolice != null) {%>
+  <div class="snackbar success">
+    <p>Apólice nº <%=numApolice%> cadastrada com sucesso!</p>
+  </div>
+  <%}%>
 </div>
 </body>
 </html>

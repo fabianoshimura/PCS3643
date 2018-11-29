@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
+<%boolean error = (boolean) request.getAttribute("error");%>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light ">
   <a class="navbar-brand" href="#">Sistema de Seguros</a>
@@ -62,6 +63,11 @@
       </div>
     </form>
   </div>
+  <%if(error) {%>
+  <div class="snackbar error">
+    <p>Preencha todos os parâmetros corretamente para prosseguir!</p>
+  </div>
+  <%}%>
 </div>
 </body>
 </html>
